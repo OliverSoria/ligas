@@ -23,7 +23,7 @@ controladorApp.controller("controlador", function($scope, $http){
 		$http({
 			 method: 'GET',
 			// url: 'prueba',
-			 url: 'admin/consulta',
+			 url: 'admin/usuarios/consulta',
 			}).then(function successCallback(response) {
 			// $scope.action = response.data;
 			console.log(response.data);
