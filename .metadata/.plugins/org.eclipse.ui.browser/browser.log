@@ -1,0 +1,178 @@
+
+nov 13, 2017 01:18:30.06 NEW SESSION
+nov 13, 2017 01:18:30.06 
+nov 13, 2017 01:18:30.06 (firefox:14303): Gtk-WARNING **: Theme parsing error: gtk-widgets.css:1903:29: Missing name of pseudo-class
+nov 13, 2017 01:18:30.06 
+nov 13, 2017 01:18:30.06 (firefox:14303): Gtk-WARNING **: Theme parsing error: gtk-widgets.css:1907:29: Missing name of pseudo-class
+nov 13, 2017 01:18:30.06 
+nov 13, 2017 01:18:30.06 (firefox:14303): Gtk-WARNING **: Theme parsing error: gtk-widgets.css:1911:29: Missing name of pseudo-class
+nov 13, 2017 01:18:30.08 
+nov 13, 2017 01:18:30.08 (firefox:14303): Gtk-WARNING **: Theme parsing error: sidebar-colors-near-flat-new.css:59:10: 'height' is not a valid property name
+nov 13, 2017 01:18:30.08 
+nov 13, 2017 01:18:30.08 (firefox:14303): Gtk-WARNING **: Theme parsing error: sidebar-colors-near-flat-new.css:152:18: Not using units is deprecated. Assuming 'px'.
+nov 13, 2017 01:18:30.09 
+nov 13, 2017 01:18:30.09 (firefox:14303): Gtk-WARNING **: Theme parsing error: sidebar-colors-near-flat-new.css:183:5: 'width' is not a valid property name
+nov 13, 2017 01:18:30.96 
+nov 13, 2017 01:18:30.96 (firefox:14303): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 01:18:30.97 
+nov 13, 2017 01:18:30.97 (firefox:14303): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 01:18:30.97 
+nov 13, 2017 01:18:30.97 (firefox:14303): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 01:18:30.97 
+nov 13, 2017 01:18:30.97 (firefox:14303): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 01:18:31.00 
+nov 13, 2017 01:18:31.00 (firefox:14303): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 01:18:31.00 
+nov 13, 2017 01:18:31.01 (firefox:14303): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 01:18:32.65 
+nov 13, 2017 01:18:32.65 (firefox:14303): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 01:18:32.65 
+nov 13, 2017 01:18:32.65 (firefox:14303): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 01:18:32.65 
+nov 13, 2017 01:18:32.65 (firefox:14303): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 01:18:32.65 
+nov 13, 2017 01:18:32.65 (firefox:14303): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 01:18:32.65 
+nov 13, 2017 01:18:32.65 (firefox:14303): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 01:18:32.66 
+nov 13, 2017 01:18:32.66 (firefox:14303): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 01:18:32.66 
+nov 13, 2017 01:18:32.66 (firefox:14303): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 01:18:32.66 
+nov 13, 2017 01:18:32.66 (firefox:14303): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 01:18:32.66 
+nov 13, 2017 01:18:32.66 (firefox:14303): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 01:18:32.66 
+nov 13, 2017 01:18:32.66 (firefox:14303): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 01:18:32.66 
+nov 13, 2017 01:18:32.66 (firefox:14303): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 01:18:32.66 
+nov 13, 2017 01:18:32.67 (firefox:14303): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 01:18:32.67 
+nov 13, 2017 01:18:32.67 (firefox:14303): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 01:18:32.67 
+nov 13, 2017 01:18:32.67 (firefox:14303): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 01:18:32.67 
+nov 13, 2017 01:18:32.68 (firefox:14303): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 01:18:32.68 
+nov 13, 2017 01:18:32.68 (firefox:14303): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 01:18:33.32 
+nov 13, 2017 01:18:33.33 (firefox:14369): Gtk-WARNING **: Theme parsing error: gtk-widgets.css:1903:29: Missing name of pseudo-class
+nov 13, 2017 01:18:33.33 
+nov 13, 2017 01:18:33.33 (firefox:14369): Gtk-WARNING **: Theme parsing error: gtk-widgets.css:1907:29: Missing name of pseudo-class
+nov 13, 2017 01:18:33.33 
+nov 13, 2017 01:18:33.33 (firefox:14369): Gtk-WARNING **: Theme parsing error: gtk-widgets.css:1911:29: Missing name of pseudo-class
+nov 13, 2017 01:18:33.35 
+nov 13, 2017 01:18:33.35 (firefox:14369): Gtk-WARNING **: Theme parsing error: sidebar-colors-near-flat-new.css:59:10: 'height' is not a valid property name
+nov 13, 2017 01:18:33.35 
+nov 13, 2017 01:18:33.35 (firefox:14369): Gtk-WARNING **: Theme parsing error: sidebar-colors-near-flat-new.css:152:18: Not using units is deprecated. Assuming 'px'.
+nov 13, 2017 01:18:33.35 
+nov 13, 2017 01:18:33.35 (firefox:14369): Gtk-WARNING **: Theme parsing error: sidebar-colors-near-flat-new.css:183:5: 'width' is not a valid property name
+nov 13, 2017 01:18:34.35 
+nov 13, 2017 01:18:34.35 (firefox:14369): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 01:18:34.35 
+nov 13, 2017 01:18:34.35 (firefox:14369): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 01:18:34.36 
+nov 13, 2017 01:18:34.36 (firefox:14369): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 01:18:34.36 
+nov 13, 2017 01:18:34.36 (firefox:14369): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 01:18:34.39 
+nov 13, 2017 01:18:34.39 (firefox:14369): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 01:18:34.39 
+nov 13, 2017 01:18:34.39 (firefox:14369): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 01:18:35.55 
+nov 13, 2017 01:18:35.55 (/home/oliver/Downloads/Programs/firefox/firefox:14409): Gtk-WARNING **: Theme parsing error: gtk-widgets.css:1903:29: Missing name of pseudo-class
+nov 13, 2017 01:18:35.55 
+nov 13, 2017 01:18:35.55 (/home/oliver/Downloads/Programs/firefox/firefox:14409): Gtk-WARNING **: Theme parsing error: gtk-widgets.css:1907:29: Missing name of pseudo-class
+nov 13, 2017 01:18:35.55 
+nov 13, 2017 01:18:35.55 (/home/oliver/Downloads/Programs/firefox/firefox:14409): Gtk-WARNING **: Theme parsing error: gtk-widgets.css:1911:29: Missing name of pseudo-class
+nov 13, 2017 01:18:35.57 
+nov 13, 2017 01:18:35.57 (/home/oliver/Downloads/Programs/firefox/firefox:14409): Gtk-WARNING **: Theme parsing error: sidebar-colors-near-flat-new.css:59:10: 'height' is not a valid property name
+nov 13, 2017 01:18:35.57 
+nov 13, 2017 01:18:35.57 (/home/oliver/Downloads/Programs/firefox/firefox:14409): Gtk-WARNING **: Theme parsing error: sidebar-colors-near-flat-new.css:152:18: Not using units is deprecated. Assuming 'px'.
+nov 13, 2017 01:18:35.57 
+nov 13, 2017 01:18:35.57 (/home/oliver/Downloads/Programs/firefox/firefox:14409): Gtk-WARNING **: Theme parsing error: sidebar-colors-near-flat-new.css:183:5: 'width' is not a valid property name
+nov 13, 2017 01:18:35.62 
+nov 13, 2017 01:18:35.62 (/home/oliver/Downloads/Programs/firefox/firefox:14409): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 01:18:35.62 
+nov 13, 2017 01:18:35.62 (/home/oliver/Downloads/Programs/firefox/firefox:14409): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 01:18:35.63 
+nov 13, 2017 01:18:35.63 (/home/oliver/Downloads/Programs/firefox/firefox:14409): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 01:18:35.63 
+nov 13, 2017 01:18:35.63 (/home/oliver/Downloads/Programs/firefox/firefox:14409): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 01:18:35.65 
+nov 13, 2017 01:18:35.65 (/home/oliver/Downloads/Programs/firefox/firefox:14409): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 01:18:35.65 
+nov 13, 2017 01:18:35.65 (/home/oliver/Downloads/Programs/firefox/firefox:14409): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 01:18:44.46 
+nov 13, 2017 01:18:44.46 (/home/oliver/Downloads/Programs/firefox/firefox:14477): Gtk-WARNING **: Theme parsing error: gtk-widgets.css:1903:29: Missing name of pseudo-class
+nov 13, 2017 01:18:44.47 
+nov 13, 2017 01:18:44.47 (/home/oliver/Downloads/Programs/firefox/firefox:14477): Gtk-WARNING **: Theme parsing error: gtk-widgets.css:1907:29: Missing name of pseudo-class
+nov 13, 2017 01:18:44.47 
+nov 13, 2017 01:18:44.47 (/home/oliver/Downloads/Programs/firefox/firefox:14477): Gtk-WARNING **: Theme parsing error: gtk-widgets.css:1911:29: Missing name of pseudo-class
+nov 13, 2017 01:18:44.49 
+nov 13, 2017 01:18:44.49 (/home/oliver/Downloads/Programs/firefox/firefox:14477): Gtk-WARNING **: Theme parsing error: sidebar-colors-near-flat-new.css:59:10: 'height' is not a valid property name
+nov 13, 2017 01:18:44.49 
+nov 13, 2017 01:18:44.49 (/home/oliver/Downloads/Programs/firefox/firefox:14477): Gtk-WARNING **: Theme parsing error: sidebar-colors-near-flat-new.css:152:18: Not using units is deprecated. Assuming 'px'.
+nov 13, 2017 01:18:44.49 
+nov 13, 2017 01:18:44.49 (/home/oliver/Downloads/Programs/firefox/firefox:14477): Gtk-WARNING **: Theme parsing error: sidebar-colors-near-flat-new.css:183:5: 'width' is not a valid property name
+nov 13, 2017 01:18:44.53 
+nov 13, 2017 01:18:44.53 (/home/oliver/Downloads/Programs/firefox/firefox:14477): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 01:18:44.53 
+nov 13, 2017 01:18:44.53 (/home/oliver/Downloads/Programs/firefox/firefox:14477): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 01:18:44.54 
+nov 13, 2017 01:18:44.54 (/home/oliver/Downloads/Programs/firefox/firefox:14477): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 01:18:44.54 
+nov 13, 2017 01:18:44.54 (/home/oliver/Downloads/Programs/firefox/firefox:14477): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 01:18:44.58 
+nov 13, 2017 01:18:44.58 (/home/oliver/Downloads/Programs/firefox/firefox:14477): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 01:18:44.58 
+nov 13, 2017 01:18:44.59 (/home/oliver/Downloads/Programs/firefox/firefox:14477): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 01:27:06.78 
+nov 13, 2017 01:27:06.78 (/home/oliver/Downloads/Programs/firefox/firefox:14622): Gtk-WARNING **: Theme parsing error: gtk-widgets.css:1903:29: Missing name of pseudo-class
+nov 13, 2017 01:27:06.78 
+nov 13, 2017 01:27:06.78 (/home/oliver/Downloads/Programs/firefox/firefox:14622): Gtk-WARNING **: Theme parsing error: gtk-widgets.css:1907:29: Missing name of pseudo-class
+nov 13, 2017 01:27:06.78 
+nov 13, 2017 01:27:06.78 (/home/oliver/Downloads/Programs/firefox/firefox:14622): Gtk-WARNING **: Theme parsing error: gtk-widgets.css:1911:29: Missing name of pseudo-class
+nov 13, 2017 01:27:06.80 
+nov 13, 2017 01:27:06.80 (/home/oliver/Downloads/Programs/firefox/firefox:14622): Gtk-WARNING **: Theme parsing error: sidebar-colors-near-flat-new.css:59:10: 'height' is not a valid property name
+nov 13, 2017 01:27:06.80 
+nov 13, 2017 01:27:06.80 (/home/oliver/Downloads/Programs/firefox/firefox:14622): Gtk-WARNING **: Theme parsing error: sidebar-colors-near-flat-new.css:152:18: Not using units is deprecated. Assuming 'px'.
+nov 13, 2017 01:27:06.80 
+nov 13, 2017 01:27:06.80 (/home/oliver/Downloads/Programs/firefox/firefox:14622): Gtk-WARNING **: Theme parsing error: sidebar-colors-near-flat-new.css:183:5: 'width' is not a valid property name
+nov 13, 2017 01:27:06.84 
+nov 13, 2017 01:27:06.84 (/home/oliver/Downloads/Programs/firefox/firefox:14622): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 01:27:06.84 
+nov 13, 2017 01:27:06.84 (/home/oliver/Downloads/Programs/firefox/firefox:14622): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 01:27:06.85 
+nov 13, 2017 01:27:06.85 (/home/oliver/Downloads/Programs/firefox/firefox:14622): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 01:27:06.85 
+nov 13, 2017 01:27:06.85 (/home/oliver/Downloads/Programs/firefox/firefox:14622): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 01:27:06.88 
+nov 13, 2017 01:27:06.88 (/home/oliver/Downloads/Programs/firefox/firefox:14622): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 01:27:06.88 
+nov 13, 2017 01:27:06.88 (/home/oliver/Downloads/Programs/firefox/firefox:14622): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 02:24:20.95 
+nov 13, 2017 02:24:20.95 (/home/oliver/Downloads/Programs/firefox/firefox:14947): Gtk-WARNING **: Theme parsing error: gtk-widgets.css:1903:29: Missing name of pseudo-class
+nov 13, 2017 02:24:20.95 
+nov 13, 2017 02:24:20.95 (/home/oliver/Downloads/Programs/firefox/firefox:14947): Gtk-WARNING **: Theme parsing error: gtk-widgets.css:1907:29: Missing name of pseudo-class
+nov 13, 2017 02:24:20.95 
+nov 13, 2017 02:24:20.95 (/home/oliver/Downloads/Programs/firefox/firefox:14947): Gtk-WARNING **: Theme parsing error: gtk-widgets.css:1911:29: Missing name of pseudo-class
+nov 13, 2017 02:24:20.97 
+nov 13, 2017 02:24:20.97 (/home/oliver/Downloads/Programs/firefox/firefox:14947): Gtk-WARNING **: Theme parsing error: sidebar-colors-near-flat-new.css:59:10: 'height' is not a valid property name
+nov 13, 2017 02:24:20.97 
+nov 13, 2017 02:24:20.97 (/home/oliver/Downloads/Programs/firefox/firefox:14947): Gtk-WARNING **: Theme parsing error: sidebar-colors-near-flat-new.css:152:18: Not using units is deprecated. Assuming 'px'.
+nov 13, 2017 02:24:20.97 
+nov 13, 2017 02:24:20.97 (/home/oliver/Downloads/Programs/firefox/firefox:14947): Gtk-WARNING **: Theme parsing error: sidebar-colors-near-flat-new.css:183:5: 'width' is not a valid property name
+nov 13, 2017 02:24:21.01 
+nov 13, 2017 02:24:21.01 (/home/oliver/Downloads/Programs/firefox/firefox:14947): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 02:24:21.01 
+nov 13, 2017 02:24:21.01 (/home/oliver/Downloads/Programs/firefox/firefox:14947): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 02:24:21.02 
+nov 13, 2017 02:24:21.02 (/home/oliver/Downloads/Programs/firefox/firefox:14947): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 02:24:21.02 
+nov 13, 2017 02:24:21.02 (/home/oliver/Downloads/Programs/firefox/firefox:14947): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 02:24:21.05 
+nov 13, 2017 02:24:21.05 (/home/oliver/Downloads/Programs/firefox/firefox:14947): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+nov 13, 2017 02:24:21.05 
+nov 13, 2017 02:24:21.05 (/home/oliver/Downloads/Programs/firefox/firefox:14947): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed

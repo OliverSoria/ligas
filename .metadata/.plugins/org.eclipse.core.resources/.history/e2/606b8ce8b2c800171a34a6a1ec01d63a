@@ -1,0 +1,49 @@
+package com.project.dto;
+
+import java.math.BigInteger;
+import java.time.LocalDateTime;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "prueba")
+public class CatalogoUsuariosDto {
+	@Id
+	@Column(name = "id_usuario")
+	private BigInteger id_usuario;          		
+
+	@Id
+	@Column(name = "alias_usuario")
+	private String alias_usuario;       		
+
+	@Id
+	@Column(name = "nombre_usuario")
+	private String nombre_usuario;      		
+
+	@Id
+	@Column(name = "paterno_usuario")
+	private String paterno_usuario;     		
+
+	@Id
+	@Column(name = "materno_usuario")
+	private String materno_usuario;     		
+
+	@Id
+	@Column(name = "password_usuario")
+	private String password_usuario;    		
+
+	@Id
+	@Column(name = "fecha_alta_usuario")
+	private LocalDateTime fecha_alta_usuario;      
+
+	@Id
+	@Column(name = "fecha_baja_usuario")
+	private LocalDateTime fecha_baja_usuario;      
+
+	@Id
+	@Column(name = "tipo_usuario")
+	private char tipo_usuario;   
+}

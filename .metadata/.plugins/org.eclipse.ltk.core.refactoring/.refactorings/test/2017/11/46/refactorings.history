@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.project.dto.CatalogoUsuariosDto&apos; to &apos;UsuarioDto&apos;&#x0A;- Original project: &apos;test&apos;&#x0A;- Original element: &apos;com.project.dto.CatalogoUsuariosDto&apos;&#x0A;- Renamed element: &apos;com.project.dto.UsuarioDto&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;CatalogoUsuariosDto&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java&lt;com.project.dto{CatalogoUsuariosDto.java[CatalogoUsuariosDto" matchStrategy="1" name="UsuarioDto" qualified="false" references="true" similarDeclarations="false" stamp="1510605997131" textual="false" version="1.0"/>
+</session>

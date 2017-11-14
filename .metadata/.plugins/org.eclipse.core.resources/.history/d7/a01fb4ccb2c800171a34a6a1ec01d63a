@@ -1,0 +1,47 @@
+package com.project.dto;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "prueba")
+public class CatalogoUsuariosDto {
+	@Entity
+	@Table(name = "id_usuario")
+	private BigInteger id_usuario;          		
+
+	@Entity
+	@Table(name = "alias_usuario")
+	private String alias_usuario;       		
+
+	@Entity
+	@Table(name = "nombre_usuario")
+	private String nombre_usuario;      		
+
+	@Entity
+	@Table(name = "paterno_usuario")
+	private String paterno_usuario;     		
+
+	@Entity
+	@Table(name = "materno_usuario")
+	private String materno_usuario;     		
+
+	@Entity
+	@Table(name = "password_usuario")
+	private String password_usuario;    		
+
+	@Entity
+	@Table(name = "fecha_alta_usuario")
+	private LocalDateTime fecha_alta_usuario;      
+
+	@Entity
+	@Table(name = "fecha_baja_usuario")
+	private LocalDateTime fecha_baja_usuario;      
+
+	@Entity
+	@Table(name = "tipo_usuario")
+	private char tipo_usuario;  
+	
+}

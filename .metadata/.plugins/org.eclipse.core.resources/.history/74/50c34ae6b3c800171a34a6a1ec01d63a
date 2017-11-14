@@ -1,0 +1,13 @@
+package com.project.dao;
+
+import java.util.List;
+
+import com.project.dto.UsuarioDto;
+
+public interface UsuariosDao {
+	List<UsuarioDto> selectUsuarios() throws Exception;
+	
+//	void insertUsuario()
+	
+	
+}
