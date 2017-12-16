@@ -32,9 +32,9 @@ public class PruebaDaoImpl implements PruebaDao {
 			query.select(root);
 			Query<PruebaDto> q=session.createQuery(query);
 			List<PruebaDto> registros=q.getResultList();
-			for (PruebaDto registro : registros) {
-				System.out.println(registro.getNombre());
-			}
+//			for (PruebaDto registro : registros) {
+//				System.out.println(registro.getNombre());
+//			}
 			transaction.commit();
 			retorno = registros.get(0).getNombre();
 		} catch (Exception e) {

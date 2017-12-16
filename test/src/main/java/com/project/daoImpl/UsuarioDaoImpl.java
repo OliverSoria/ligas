@@ -37,9 +37,9 @@ public class UsuarioDaoImpl implements UsuariosDao {
 			
 			retorno = (ArrayList<UsuarioDto>) q.getResultList();
 			
-			for (UsuarioDto registro : retorno) {
-				System.out.println(registro.getAlias_usuario());
-			}
+//			for (UsuarioDto registro : retorno) {
+//				System.out.println(registro.getAlias_usuario());
+//			}
 			transaction.commit();
 //			retorno = registros.get(0).getNombre();
 		} catch (Exception e) {

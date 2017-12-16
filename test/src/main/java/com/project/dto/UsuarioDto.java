@@ -10,6 +10,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "catalogo_usuarios")
@@ -93,7 +97,7 @@ public class UsuarioDto implements Serializable {
 	public void setPassword_usuario(String password_usuario) {
 		this.password_usuario = password_usuario;
 	}
-
+	
 	public LocalDateTime getFecha_alta_usuario() {
 		return fecha_alta_usuario;
 	}

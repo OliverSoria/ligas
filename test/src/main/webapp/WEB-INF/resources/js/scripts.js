@@ -1,7 +1,80 @@
-function hello(){
-	console.log('Presionaste el boton...');
+
+var controladorApp = angular.module('SistemaGestionApp', []);
+
+// Don't move
+function formateadorFecha(value, row, index) {
+    var resultado = '-';
+        
+    if (value != null) {
+    	var dia = value.dayOfMonth;
+        var mes = value.monthValue;
+        var anio = value.year; 
+
+        resultado = dia + '/' + mes + '/' + anio;
+    }
+    
+    return resultado;
 }
 
+// Don't move
+function formateadorTipoUsuario(value, row, index) {
+    var resultado = '-';
+        
+    if (value != null) {
+    	switch(value) {
+    	case 'A':
+    		resultado = 'Administrador';
+    		break;
+    	
+    	case 'S':
+    		resultado = 'Supervisor';
+    		break
+    	
+    	case 'V':
+    		resultado = 'Vendedor';
+    		break;
+    	}
+    }
+    
+    return resultado;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 function action() {
 	$.ajax({
 		type: 'GET',
@@ -11,26 +84,5 @@ function action() {
 			$('#encabezado').html(data);
 		}
 	});
-}
-
-var controladorApp = angular.module('miAplicacionAngular', []);
-
-controladorApp.controller("controlador", function($scope, $http){
-	$scope.action = 5 + 3;
-	
-	$scope.action2 = function() {
-		
-		$http({
-			 method: 'GET',
-			// url: 'prueba',
-			 url: 'admin/usuarios/consulta',
-			}).then(function successCallback(response) {
-			// $scope.action = response.data;
-			console.log(response.data);
-		}, function errorCallback(response) {
-			console.log(response);
-			$scope.action = 'error';	
-		});
-	}
-});
+}*/
 
