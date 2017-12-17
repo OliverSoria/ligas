@@ -8,3 +8,4 @@
 <script src="<c:url value="/resources/js/bootstrap-table.min.js" />"></script>
 <script src="<c:url value="/resources/js/bootstrap-table-es-MX.min.js" />"></script>
 <script src="<c:url value="/resources/js/bootstrap-select.min.js" />"></script>
+<script src="<c:url value="/resources/js/defaults-es_CL.min.js" />"></script>
