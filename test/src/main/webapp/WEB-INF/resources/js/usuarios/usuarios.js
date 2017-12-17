@@ -196,7 +196,7 @@ controladorApp.controller('alta_usuario', function($scope, $http) {
 	
 	
 	$scope.onFocusUsuario = function() {
-		console.log('Entraste del campo usuario');
+		console.log('Entraste al campo usuario');
 	}
 	
 	
