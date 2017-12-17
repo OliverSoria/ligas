@@ -2,6 +2,7 @@ package com.project.controller;
 
 import java.util.ArrayList;
 
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -35,9 +36,15 @@ public class UsuariosController {
 	
 	@RequestMapping(value="/usuarios/alta", consumes = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.POST)
 	public ResponseEntity altaUsuarios(@RequestBody UsuarioDto usuario) throws Exception {
-		//usuariosBo.saveUser()
-		System.out.println(usuario);
-		// return JSONObject.quote("success!");
-		return new ResponseEntity(HttpStatus.OK);
+		try {
+			usuariosBo.saveUser(usuario);
+			return ResponseEntity.status(HttpStatus.CREATED).
+					body(JSONObject.quote("El usuario ha sido dado de alta con exito"));
+		} catch (Exception ex) {
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).
+					body(JSONObject.quote("Ocurrio un error"));
+		}
+		
+		
 	}
 }

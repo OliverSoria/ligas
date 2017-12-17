@@ -57,8 +57,30 @@ public class UsuarioDaoImpl implements UsuariosDao {
 
 	@Override
 	public void insertUsuario(UsuarioDto usuario) throws Exception {
-		// TODO Auto-generated method stub
+		Session session = null;
+	    Transaction transaction = null;
 		
+		try {
+			session = HibernateUtil.getSessionFactory().openSession();
+		    transaction = session.getTransaction();
+		    transaction.begin();
+			
+		    session.save(usuario);
+		    transaction.commit();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			
+			if (transaction != null) {
+				transaction.rollback();
+			}
+			
+			throw e;
+		} finally {
+			if (session != null) {
+				session.close();
+		     }
+		}
 	}
 
 	@Override

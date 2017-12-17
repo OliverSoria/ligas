@@ -137,22 +137,36 @@ controladorApp.controller('operaciones_usuarios', function($scope, $http) {
 // 
 controladorApp.controller('alta_usuario', function($scope, $http) {
 	
-	$scope.altaUsuario = function(usuario) {
-		var user = {
+	var user = {
+			
+			id_usuario         : null,
+			alias_usuario      : null,
+			nombre_usuario     : null,
+			paterno_usuario    : null,
+			materno_usuario    : null,
+			password_usuario   : null,
+			fecha_alta_usuario : null,
+			fecha_baja_usuario : null,
+			tipo_usuario       : null
+		}
+	
+	$scope.onAltaUsuarioAceptar = function(usuario) {
+		user = {
 		
-			id_usuario         : 98              ,
+			id_usuario         : 1              ,
 			alias_usuario      : usuario.alias   ,
 			nombre_usuario     : usuario.nombre  ,
 			paterno_usuario    : usuario.paterno ,
 			materno_usuario    : usuario.materno ,
 			password_usuario   : usuario.password,
-			fecha_alta_usuario : null,
-			fecha_baja_usuario : null,
+			fecha_alta_usuario : null            ,
+			fecha_baja_usuario : null            ,
 			tipo_usuario       : usuario.tipo
 		}
 		
-		console.log(user);
+		// console.log(user);
 		
+		// Sends bean to server
 	    $http({
 			 method: 'POST',
 			 data : angular.toJson(user),
@@ -161,38 +175,29 @@ controladorApp.controller('alta_usuario', function($scope, $http) {
 			        'Content-type': 'application/json'
 			 }
 			}).then(function successCallback(response) {
-			console.log('success');
+			console.log(response.data);
+			$('#modal-formulario').modal('hide');
+			$('#tabla-usuarios').bootstrapTable('refresh');
+			$scope.usuario = null;
 			//$scope.usuarios = response.data;
+			console.log('todo bien');
 		}, function errorCallback(response) {
-			console.log('error');
+			console.log(response.data);
+			console.log('ocurrio un error');
+			console.log(response.message);
 		});
-	    
-//	    $.ajax({
-//			type: 'GET',
-//			dataType: 'json',
-//			url: 'usuarios/alta',
-//			data: { 
-//				 'alias'    : alias,
-//				 'nombre'   : nombre,
-//				 'paterno'  : paterno,
-//				 'materno'  : materno,
-//				 'password' : password,
-//				 'tipo'     : tipo
-//			 },
-//			success: function(data) {
-//				console.log('success!');
-//			}
-//		});
-	    
-//	    console.log(alias);
-//		console.log(nombre);
-//		console.log(paterno);
-//		console.log(materno);
-//		console.log(tipo);
 	}
 	
 	
+	$scope.onAltaUsuarioCancelar = function(usuario) {
+		$('#modal-formulario').modal('hide');
+		$scope.usuario = null;
+	}
 	
+	
+	$scope.onFocusUsuario = function() {
+		console.log('Entraste del campo usuario');
+	}
 	
 	
 	

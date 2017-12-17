@@ -11,7 +11,7 @@
         <div class="row">
         	<span class="text-right col-xs-12 col-sm-5 col-md-5">Usuario:</span>
         	<div class="col-xs-12 col-sm-7 col-md-7">
-        		<input type="text" ng-model="usuario.alias" class="form-control" style="margin-bottom:15px;">
+        		<input type="text" ng-model="usuario.alias" ng-focus="onFocusUsuario()" class="form-control" style="margin-bottom:15px;">
         	</div>
         </div>
         <div class="row">
@@ -46,8 +46,8 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-success" ng-click="altaUsuario(usuario)"">Aceptar</button>
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-success" ng-click="onAltaUsuarioAceptar(usuario)">Aceptar</button>
+        <button type="button" class="btn btn-danger" ng-click="onAltaUsuarioCancelar()">Cancelar</button>
       </div>
     </div>
   </div>

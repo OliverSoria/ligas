@@ -12,3 +12,7 @@ th {
     width: auto;
     min-width: 300px;   
 }
+
+.fixed-table-container tbody .selected td {
+	background-color: #ffdd8b;
+}

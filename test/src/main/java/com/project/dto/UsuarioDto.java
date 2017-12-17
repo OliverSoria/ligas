@@ -23,7 +23,7 @@ public class UsuarioDto implements Serializable {
 
 	@Id
 	@Column(name = "id_usuario")
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private BigInteger id_usuario;          		
 
 	@Column(name = "alias_usuario")
