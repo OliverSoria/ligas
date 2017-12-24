@@ -1,4 +1,5 @@
-//Move to it's own file
+var usuarios = [];
+
 $(document).ready(function () {
 	$('#tabla-usuarios').bootstrapTable({
 	    url: 'usuarios/consulta',
@@ -58,7 +59,10 @@ $(document).ready(function () {
 	    		valign: 'middle',
 	    		sortable: true
 	    	}
-	    	]
+	    	],
+	    onLoadSuccess: function (data) {
+	    	usuarios = data;
+	    }
 	});
 });
 
@@ -149,11 +153,20 @@ controladorApp.controller('alta_usuario', function($scope, $http) {
 			fecha_baja_usuario : null,
 			tipo_usuario       : null
 		}
+	$scope.alertUserClasses = 'alert alert-info alert-info-modal text-center'; 
+	$scope.textAltaUsuario = 'Favor de capturar la informaci\u00F3n';
+//	$scope.usuario = new Object();
+//	$scope.usuario.alias = '';
+	
+	 
+	//var aliases = usuarios.alias_usuario;
 	
 	$scope.onAltaUsuarioAceptar = function(usuario) {
+		var tipoUsario = $('.selectpicker').selectpicker('val');
+		
 		user = {
 		
-			id_usuario         : 1              ,
+			id_usuario         : 1               ,
 			alias_usuario      : usuario.alias   ,
 			nombre_usuario     : usuario.nombre  ,
 			paterno_usuario    : usuario.paterno ,
@@ -161,10 +174,8 @@ controladorApp.controller('alta_usuario', function($scope, $http) {
 			password_usuario   : usuario.password,
 			fecha_alta_usuario : null            ,
 			fecha_baja_usuario : null            ,
-			tipo_usuario       : usuario.tipo
+			tipo_usuario       : tipoUsario
 		}
-		
-		// console.log(user);
 		
 		// Sends bean to server
 	    $http({
@@ -175,10 +186,11 @@ controladorApp.controller('alta_usuario', function($scope, $http) {
 			        'Content-type': 'application/json'
 			 }
 			}).then(function successCallback(response) {
-			console.log(response.data);
+			//console.log(response.data);
 			$('#modal-formulario').modal('hide');
 			$('#tabla-usuarios').bootstrapTable('refresh');
 			$scope.usuario = null;
+			$scope.confirmPwd = null;
 			//$scope.usuarios = response.data;
 			console.log('todo bien');
 		}, function errorCallback(response) {
@@ -192,13 +204,127 @@ controladorApp.controller('alta_usuario', function($scope, $http) {
 	$scope.onAltaUsuarioCancelar = function(usuario) {
 		$('#modal-formulario').modal('hide');
 		$scope.usuario = null;
+		$scope.confirmPwd = null;
 	}
 	
 	
 	$scope.onFocusUsuario = function() {
-		console.log('Entraste al campo usuario');
+		validaUsuario();
+	}
+	
+	$scope.onFocusNombre = function() {
+		validaNombreApellidos('Nombre');
+	}
+	
+	$scope.onFocusPaterno = function() {
+		validaNombreApellidos('Apellido paterno');
+	}
+	
+	$scope.onFocusMaterno = function() {
+		validaNombreApellidos('Apellido materno');
+	}
+	
+	$scope.onFocusPassword = function() {
+		$scope.textAltaUsuario = "Introduzca la contrase\u00F1a que desea utilizar";
+		$scope.alertUserClasses = 'alert alert-info alert-info-modal text-center';
+	}
+	
+	$scope.onFocusConfirmar = function() {
+		$scope.textAltaUsuario = "Confirme la contrase\u00F1a que desea utilizar";
+		$scope.alertUserClasses = 'alert alert-info alert-info-modal text-center';
+	}
+	
+	$scope.onFocusTipo = function() {
+		$scope.textAltaUsuario = "Seleccione el tipo de usuario";
+		$scope.alertUserClasses = 'alert alert-info alert-info-modal text-center';
+	}
+	
+	$scope.onKeyUpUsuario = function() {
+		validaUsuario();
+	}
+	
+	$scope.onKeyUpNombre = function() {
+		validaNombreApellidos('Nombre');
+	}
+	
+	$scope.onKeyUpPaterno = function() {
+		validaNombreApellidos('Apellido paterno');
+	}
+	
+	$scope.onKeyUpMaterno = function() {
+		validaNombreApellidos('Apellido materno');
 	}
 	
 	
+	// Vallidacion del nombre de usuario
+	function validaUsuario() {
+		// Valida que sea diferente de nulo y de cero
+		if ($scope.usuario == undefined || 
+				$scope.usuario.alias == undefined || 
+				$scope.usuario.alias.length < 1) {
+			$scope.textAltaUsuario = "Introduzca el usuario que desea utilizar";
+			$scope.alertUserClasses = 'alert alert-info alert-info-modal text-center';
+		// Valida que los carateres sean validos
+		} else if(!validaNickName($scope.usuario.alias)) {
+			$scope.textAltaUsuario = "No es posible utilizar caracteres especiales";
+			$scope.alertUserClasses = 'alert alert-danger alert-info-modal text-center';
+		// Valida que al menos tenga 6 caracteres
+		} else if($scope.usuario.alias.length < 6) {
+			$scope.textAltaUsuario = "Su usuario debe tener al menos 6 caracteres";
+			$scope.alertUserClasses = 'alert alert-danger alert-info-modal text-center';
+		// Valida si esta disponible
+		} else {
+			for (var i = 0; i < usuarios.length; i++) {
+				// console.log(i + ' ' + usuarios[i].alias_usuario + ' ' + $scope.usuario.alias);
+				if (usuarios[i].alias_usuario === $scope.usuario.alias) {
+					$scope.textAltaUsuario = "Usuario no disponible";
+					$scope.alertUserClasses = 'alert alert-danger alert-info-modal text-center'; 
+					break;
+				} else {
+					$scope.textAltaUsuario = "Usuario disponible";
+					$scope.alertUserClasses = 'alert alert-success alert-info-modal text-center'; 
+				}
+			}
+		}
+	}
+	  
+	function validaNombreApellidos(texto) {
+
+		var bean = $scope.usuario;
+		var variableBean;
+		
+		if (bean != undefined) {
+			switch (texto) {
+			case 'Nombre':
+				variableBean = $scope.usuario.nombre;
+				break;
+			case 'Apellido paterno':
+				variableBean = $scope.usuario.paterno;
+				break;
+			case 'Apellido materno':
+				variableBean = $scope.usuario.materno;
+				break;
+			}
+		}
+		
+		// Valida que sea diferente de nulo y de cero
+	    if (bean == undefined || 
+	    		variableBean == undefined ||
+	    		variableBean.length < 1) {
+	      $scope.textAltaUsuario = "Introduzca el " + texto.toLowerCase()  + " del usuario";
+	      $scope.alertUserClasses = 'alert alert-info alert-info-modal text-center';
+	    // Valida que los carateres sean validos
+	    } else if(!validaNombreApellido(variableBean)) {
+	      $scope.textAltaUsuario = "No es posible utilizar caracteres especiales";
+	      $scope.alertUserClasses = 'alert alert-danger alert-info-modal text-center';
+	    // Valida que al menos tenga 2 caracteres
+	    } else if(variableBean.length < 2) {
+	      $scope.textAltaUsuario = "Su " + texto.toLowerCase() + " debe tener al menos 2 caracteres";
+	        $scope.alertUserClasses = 'alert alert-danger alert-info-modal text-center';
+	    } else {
+	      $scope.textAltaUsuario = texto + " correcto";
+	      $scope.alertUserClasses = 'alert alert-success alert-info-modal text-center'; 
+	    }
+	  }	
 	
 });

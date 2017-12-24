@@ -1,7 +1,7 @@
 
 var controladorApp = angular.module('SistemaGestionApp', []);
 
-// Don't move
+// Aplica formato a las fechas de las tablas
 function formateadorFecha(value, row, index) {
     var resultado = '-';
         
@@ -16,22 +16,23 @@ function formateadorFecha(value, row, index) {
     return resultado;
 }
 
-// Don't move
+// Aplica formato al tipo de usuario de las tablas
 function formateadorTipoUsuario(value, row, index) {
     var resultado = '-';
         
     if (value != null) {
     	switch(value) {
-    	case 'A':
+    	case 'A' :
     		resultado = 'Administrador';
     		break;
-    	
-    	case 'S':
+    	case 'S' :
     		resultado = 'Supervisor';
     		break
-    	
-    	case 'V':
+    	case 'V' :
     		resultado = 'Vendedor';
+    		break;
+    	default :
+    		resultado = 'Desconocido';
     		break;
     	}
     }
@@ -39,50 +40,18 @@ function formateadorTipoUsuario(value, row, index) {
     return resultado;
 }
 
+//Valida nombre de usuario, permite letras y numeros
+function validaNickName(entrada) {
+	var valor = entrada.trim();
+	var reg = /^[a-zA-Z0-9]+$/;
+	
+	return reg.test(valor);
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-function action() {
-	$.ajax({
-		type: 'GET',
-		dataType: 'json',
-		url: 'prueba',
-		success: function(data) {
-			$('#encabezado').html(data);
-		}
-	});
-}*/
-
+// Valida Nombres y Apellidos (permite acentos, "ñ" y "-")
+function validaNombreApellido(entrada) {
+	var valor = entrada.trim();
+	var reg = /^([a-z \u00F1\u00E1\u00E9\u00ED\u00F3\u00FA\u00FC\u002D]{1,30})$/i;
+	
+	return reg.test(valor);
+}

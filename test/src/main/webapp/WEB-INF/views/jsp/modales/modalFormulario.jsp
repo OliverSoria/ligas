@@ -11,45 +11,73 @@
         <div class="row">
         	<span class="text-right col-xs-12 col-sm-6 col-md-6">Usuario:</span>
         	<div class="col-xs-12 col-sm-6 col-md-6">
-        		<input type="text" ng-model="usuario.alias" ng-focus="onFocusUsuario()" class="form-control" style="margin-bottom:15px;">
+        		<input type="text" 
+        		       ng-model="usuario.alias" 
+        		       ng-focus="onFocusUsuario()" 
+        		       ng-keyup="onKeyUpUsuario()" 
+        		       class="form-control" 
+        		       style="margin-bottom:15px;">
         	</div>
         </div>
         <div class="row">
-        	<span class="text-right col-xs-12 col-sm-6 col-md-6">Nombre:</span>
+        	<span class="text-right col-xs-12 col-sm-6 col-md-6">Nombre(s):</span>
         	<div class="col-xs-12 col-sm-6 col-md-6">
-        		<input type="text" ng-model="usuario.nombre" class="form-control" style="margin-bottom:15px;">
+        		<input type="text" 
+        		       ng-model="usuario.nombre"
+        		       ng-focus="onFocusNombre()"
+        		       ng-keyup="onKeyUpNombre()"
+        		       class="form-control" 
+        		       style="margin-bottom:15px;">
         	</div>
         </div>
         <div class="row">
         	<span class="text-right col-xs-12 col-sm-6 col-md-6">Apellido Paterno:</span>
         	<div class="col-xs-12 col-sm-6 col-md-6">
-        		<input type="text" ng-model="usuario.paterno" class="form-control" style="margin-bottom:15px;">
+        		<input type="text" 
+        		       ng-model="usuario.paterno"
+        		       ng-focus="onFocusPaterno()" 
+        		       ng-keyup="onKeyUpPaterno()"
+        		       class="form-control" 
+        		       style="margin-bottom:15px;">
         	</div>
         </div>
       	<div class="row">
         	<span class="text-right col-xs-12 col-sm-6 col-md-6">Apellido Materno:</span>
         	<div class="col-xs-12 col-sm-6 col-md-6">
-        		<input type="text" ng-model="usuario.materno" class="form-control" style="margin-bottom:15px;">
+        		<input type="text" 
+        		       ng-model="usuario.materno" 
+        		       ng-focus="onFocusMaterno()"
+        		       ng-keyup="onKeyUpMaterno()"
+        		       class="form-control" 
+        		       style="margin-bottom:15px;">
         	</div>
         </div>
         <div class="row">
         	<span class="text-right col-xs-12 col-sm-6 col-md-6">Contraseña:</span>
         	<div class="col-xs-12 col-sm-6 col-md-6">
-        		<input type="password" ng-model="usuario.password" class="form-control" style="margin-bottom:15px;">
+        		<input type="password" 
+        		       ng-model="usuario.password"
+        		       ng-focus="onFocusPassword()" 
+        		       class="form-control" 
+        		       style="margin-bottom:15px;">
         	</div>
         </div>
         <div class="row">
         	<span class="text-right col-xs-12 col-sm-6 col-md-6">Confirmar contraseña:</span>
         	<div class="col-xs-12 col-sm-6 col-md-6">
-        		<input type="password" class="form-control" style="margin-bottom:15px;">
+        		<input type="password" 
+        		       ng-model="confirmPwd"
+        		       ng-focus="onFocusConfirmar()"
+        		       class="form-control" 
+        		       style="margin-bottom:15px;">
         	</div>
         </div>
         <div class="row">
         	<span class="text-right col-xs-12 col-sm-6 col-md-6">Tipo de Usuario:</span>
         	<div class="col-xs-12 col-sm-6 col-md-6">
         		<!-- <input type="text" ng-model="usuario.tipo" class="form-control"> -->
-        		<div class="form-group">
-        			<select class="selectpicker form-control" ng-model="usuario.tipo">
+        		<div class="form-group" ng-click="onFocusTipo()">
+        			<select class="selectpicker form-control">
 	  					<option>Vendedor</option>
 	  					<option>Supervisor</option>
 	  					<option>Administrador</option>
@@ -62,8 +90,8 @@
         <div class="row">
 	        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 	        	<div class="form-group">
-	        		<div class="alert alert-info alert-info-modal text-center">
-	 					Favor de capturar la información
+	        		<div ng-class="alertUserClasses">
+	        			{{textAltaUsuario}}
 					</div>
 	        	</div>
 	        </div>	

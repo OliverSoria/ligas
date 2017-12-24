@@ -4,7 +4,7 @@ th {
     color: white;
 }
 
-.modal-dialog{
+.modal-dialog {
     position: relative;
     display: table; /* This is important */ 
     overflow-y: auto;    
