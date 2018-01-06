@@ -153,14 +153,23 @@ controladorApp.controller('alta_usuario', function($scope, $http) {
 			fecha_baja_usuario : null,
 			tipo_usuario       : null
 		}
-	$scope.alertUserClasses = 'alert alert-info alert-info-modal text-center'; 
+	$scope.alertUserClasses = 'alert alert-info alert-info-modal text-center';
+	
+	$scope.colorUserUsuarioClasses = 'col-xs-12 col-sm-6 col-md-6';
+	$scope.iconsUserUsuarioClasses = 'glyphicon glyphicon-warning-sign form-control-feedback glyphicon-input';
+	$scope.colorUserNombreClasses = 'col-xs-12 col-sm-6 col-md-6';
+	$scope.iconsUserNombreClasses = 'glyphicon glyphicon-warning-sign form-control-feedback glyphicon-input';
+	$scope.colorUserPaternoClasses = 'col-xs-12 col-sm-6 col-md-6';
+	$scope.iconsUserPaternoClasses = 'glyphicon glyphicon-warning-sign form-control-feedback glyphicon-input';
+	$scope.colorUserMaternoClasses = 'col-xs-12 col-sm-6 col-md-6';
+	$scope.iconsUserMaternoClasses = 'glyphicon glyphicon-warning-sign form-control-feedback glyphicon-input';
+	$scope.colorUserPasswordClasses = 'col-xs-12 col-sm-6 col-md-6';
+	$scope.iconsUserPasswordClasses = 'glyphicon glyphicon-warning-sign form-control-feedback glyphicon-input';
+	$scope.colorUserConfirmaPasswordClasses = 'col-xs-12 col-sm-6 col-md-6';
+	$scope.iconsUserConfirmaPasswordClasses = 'glyphicon glyphicon-warning-sign form-control-feedback glyphicon-input';
+	
 	$scope.textAltaUsuario = 'Favor de capturar la informaci\u00F3n';
-//	$scope.usuario = new Object();
-//	$scope.usuario.alias = '';
-	
-	 
-	//var aliases = usuarios.alias_usuario;
-	
+
 	$scope.onAltaUsuarioAceptar = function(usuario) {
 		var tipoUsario = $('.selectpicker').selectpicker('val');
 		
@@ -225,13 +234,11 @@ controladorApp.controller('alta_usuario', function($scope, $http) {
 	}
 	
 	$scope.onFocusPassword = function() {
-		$scope.textAltaUsuario = "Introduzca la contrase\u00F1a que desea utilizar";
-		$scope.alertUserClasses = 'alert alert-info alert-info-modal text-center';
+		validaPassword();
 	}
 	
 	$scope.onFocusConfirmar = function() {
-		$scope.textAltaUsuario = "Confirme la contrase\u00F1a que desea utilizar";
-		$scope.alertUserClasses = 'alert alert-info alert-info-modal text-center';
+		validaConfirmaPassword();
 	}
 	
 	$scope.onFocusTipo = function() {
@@ -255,6 +262,13 @@ controladorApp.controller('alta_usuario', function($scope, $http) {
 		validaNombreApellidos('Apellido materno');
 	}
 	
+	$scope.onKeyUpPassword = function() {
+		validaPassword();
+	}
+	
+	$scope.onKeyUpConfirmaPassword = function() {
+		validaConfirmaPassword();
+	}
 	
 	// Vallidacion del nombre de usuario
 	function validaUsuario() {
@@ -268,31 +282,41 @@ controladorApp.controller('alta_usuario', function($scope, $http) {
 		} else if(!validaNickName($scope.usuario.alias)) {
 			$scope.textAltaUsuario = "No es posible utilizar caracteres especiales";
 			$scope.alertUserClasses = 'alert alert-danger alert-info-modal text-center';
+			$scope.iconsUserUsuarioClasses = 'glyphicon glyphicon-remove form-control-feedback glyphicon-input';
+			$scope.colorUserUsuarioClasses = 'col-xs-12 col-sm-6 col-md-6 has-error';
 		// Valida que al menos tenga 6 caracteres
 		} else if($scope.usuario.alias.length < 6) {
 			$scope.textAltaUsuario = "Su usuario debe tener al menos 6 caracteres";
 			$scope.alertUserClasses = 'alert alert-danger alert-info-modal text-center';
+			$scope.iconsUserUsuarioClasses = 'glyphicon glyphicon-remove form-control-feedback glyphicon-input';
+			$scope.colorUserUsuarioClasses = 'col-xs-12 col-sm-6 col-md-6 has-error';
 		// Valida si esta disponible
 		} else {
 			for (var i = 0; i < usuarios.length; i++) {
 				// console.log(i + ' ' + usuarios[i].alias_usuario + ' ' + $scope.usuario.alias);
 				if (usuarios[i].alias_usuario === $scope.usuario.alias) {
 					$scope.textAltaUsuario = "Usuario no disponible";
-					$scope.alertUserClasses = 'alert alert-danger alert-info-modal text-center'; 
+					$scope.alertUserClasses = 'alert alert-danger alert-info-modal text-center';
+					$scope.iconsUserUsuarioClasses = 'glyphicon glyphicon-remove form-control-feedback glyphicon-input';
+					$scope.colorUserUsuarioClasses = 'col-xs-12 col-sm-6 col-md-6 has-error';
 					break;
 				} else {
 					$scope.textAltaUsuario = "Usuario disponible";
-					$scope.alertUserClasses = 'alert alert-success alert-info-modal text-center'; 
+					$scope.alertUserClasses = 'alert alert-success alert-info-modal text-center';
+					$scope.iconsUserUsuarioClasses = 'glyphicon glyphicon-ok form-control-feedback glyphicon-input';
+					$scope.colorUserUsuarioClasses = 'col-xs-12 col-sm-6 col-md-6 has-success';
 				}
 			}
 		}
 	}
-	  
+	
+	// Valida nombres y apellidos
 	function validaNombreApellidos(texto) {
 
 		var bean = $scope.usuario;
 		var variableBean;
 		
+		// Evalua segun argumento de entrada
 		if (bean != undefined) {
 			switch (texto) {
 			case 'Nombre':
@@ -317,14 +341,81 @@ controladorApp.controller('alta_usuario', function($scope, $http) {
 	    } else if(!validaNombreApellido(variableBean)) {
 	      $scope.textAltaUsuario = "No es posible utilizar caracteres especiales";
 	      $scope.alertUserClasses = 'alert alert-danger alert-info-modal text-center';
+	      $scope.iconsUserClasses = 'glyphicon glyphicon-remove form-control-feedback glyphicon-input';
+	      $scope.colorUserClasses = 'col-xs-12 col-sm-6 col-md-6 has-error';
 	    // Valida que al menos tenga 2 caracteres
 	    } else if(variableBean.length < 2) {
 	      $scope.textAltaUsuario = "Su " + texto.toLowerCase() + " debe tener al menos 2 caracteres";
 	        $scope.alertUserClasses = 'alert alert-danger alert-info-modal text-center';
+	        $scope.iconsUserClasses = 'glyphicon glyphicon-remove form-control-feedback glyphicon-input';
+	        $scope.colorUserClasses = 'col-xs-12 col-sm-6 col-md-6 has-error';
+	    // Si pasa todas las validaciones
 	    } else {
 	      $scope.textAltaUsuario = texto + " correcto";
-	      $scope.alertUserClasses = 'alert alert-success alert-info-modal text-center'; 
+	      $scope.alertUserClasses = 'alert alert-success alert-info-modal text-center';
+	      $scope.iconsUserClasses = 'glyphicon glyphicon-ok form-control-feedback glyphicon-input';
+	      $scope.colorUserClasses = 'col-xs-12 col-sm-6 col-md-6 has-success';
 	    }
-	  }	
+	}	
 	
+	function validaPassword() {
+		// Valida que sea diferente de nulo y de cero
+		if ($scope.usuario == undefined || 
+				$scope.usuario.password == undefined || 
+				$scope.usuario.password.length < 1) {
+			$scope.textAltaUsuario = "Introduzca la contrase\u00F1a que desea utilizar";
+			$scope.alertUserClasses = 'alert alert-info alert-info-modal text-center';
+		// Valida minimo 6 caracteres
+		} else if($scope.usuario.password.length < 6) {
+			$scope.textAltaUsuario = "Su contrase\u00F1a debe tener al menos 6 caracteres";
+			$scope.alertUserClasses = 'alert alert-danger alert-info-modal text-center';
+			$scope.iconsUserPasswordClasses = 'glyphicon glyphicon-remove form-control-feedback glyphicon-input';
+			$scope.colorUserPasswordClasses = 'col-xs-12 col-sm-6 col-md-6 has-error';
+		// Valida maximo 16 caracteres
+		} else if ($scope.usuario.password.search(/[a-z]/i) < 0) {
+			$scope.textAltaUsuario = "Su contrase\u00F1a debe tener al menos una letra";
+			$scope.alertUserClasses = 'alert alert-danger alert-info-modal text-center';
+			$scope.iconsUserPasswordClasses = 'glyphicon glyphicon-remove form-control-feedback glyphicon-input';
+			$scope.colorUserPasswordClasses = 'col-xs-12 col-sm-6 col-md-6 has-error';
+		// Valida que tenga al menos un digito
+		} else if ($scope.usuario.password.search(/[0-9]/) < 0) {
+			$scope.textAltaUsuario = "Su contrase\u00F1a debe tener al menos una d\u00edgito";
+			$scope.alertUserClasses = 'alert alert-danger alert-info-modal text-center';
+			$scope.iconsUserPasswordClasses = 'glyphicon glyphicon-remove form-control-feedback glyphicon-input';
+			$scope.colorUserPasswordClasses = 'col-xs-12 col-sm-6 col-md-6 has-error';
+		// Valida maximo 16 caracteres
+		} else if($scope.usuario.password.length > 16) {
+			$scope.textAltaUsuario = "Su contrase\u00F1a debe tener m\u00e1ximo 16 caracteres";
+			$scope.alertUserClasses = 'alert alert-danger alert-info-modal text-center';
+			$scope.iconsUserPasswordClasses = 'glyphicon glyphicon-remove form-control-feedback glyphicon-input';
+			$scope.colorUserPasswordClasses = 'col-xs-12 col-sm-6 col-md-6 has-error';
+		// Si pasa todas las validaciones
+		} else {
+		      $scope.textAltaUsuario = "Contrase\u00F1a correcta";
+		      $scope.alertUserClasses = 'alert alert-success alert-info-modal text-center';
+		      $scope.iconsUserPasswordClasses = 'glyphicon glyphicon-ok form-control-feedback glyphicon-input';
+		      $scope.colorUserPasswordClasses = 'col-xs-12 col-sm-6 col-md-6 has-success';
+		    }
+	}
+	
+	function validaConfirmaPassword() {
+		// Valida que sea diferente de nulo y de cero
+		if ($scope.confirmPwd == undefined || 
+				$scope.confirmPwd.length < 1) {
+			$scope.textAltaUsuario = "Confirme la contrase\u00F1a que desea utilizar";
+			$scope.alertUserClasses = 'alert alert-info alert-info-modal text-center';
+		// Valida minimo 6 caracteres
+		} else if ($scope.usuario.password !== $scope.confirmPwd) {
+			$scope.textAltaUsuario = "Las contrase\u00F1as no coinciden";
+			$scope.alertUserClasses = 'alert alert-danger alert-info-modal text-center';
+			$scope.iconsUserConfirmaPasswordClasses = 'glyphicon glyphicon-remove form-control-feedback glyphicon-input';
+			$scope.colorUserConfirmaPasswordClasses = 'col-xs-12 col-sm-6 col-md-6 has-error';
+		// Si pasa todas las validaciones
+		} else {
+			$scope.textAltaUsuario = "Las contrase\u00F1as coinciden";
+		    $scope.alertUserClasses = 'alert alert-success alert-info-modal text-center';
+		    $scope.iconsUserConfirmaPasswordClasses = 'glyphicon glyphicon-ok form-control-feedback glyphicon-input';
+		    $scope.colorUserConfirmaPasswordClasses = 'col-xs-12 col-sm-6 col-md-6 has-success';
+		}
+	}
 });
