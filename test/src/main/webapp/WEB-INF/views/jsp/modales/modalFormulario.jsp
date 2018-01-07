@@ -5,7 +5,7 @@
     <div class="modal-content" ng-controller="alta_usuario">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Agregar nuevo usuario</h4>
+        <h4 class="modal-title">{{tituloAltaUsuario}}</h4>
       </div>
       <div class="modal-body">
         <div class="row">
@@ -14,7 +14,8 @@
         		<input type="text" 
         		       ng-model="usuario.alias" 
         		       ng-focus="onFocusUsuario()" 
-        		       ng-keyup="onKeyUpUsuario()" 
+        		       ng-keyup="onKeyUpUsuario()"
+        		       ng-disabled="inputsAltaUsuario" 
         		       class="form-control" 
         		       style="margin-bottom:15px;">
         		       <span ng-class="iconsUserUsuarioClasses"></span>
@@ -27,6 +28,7 @@
         		       ng-model="usuario.nombre"
         		       ng-focus="onFocusNombre()"
         		       ng-keyup="onKeyUpNombre()"
+        		       ng-disabled="inputsAltaUsuario"
         		       class="form-control" 
         		       style="margin-bottom:15px;">
         		       <span ng-class="iconsUserNombreClasses"></span>
@@ -39,6 +41,7 @@
         		       ng-model="usuario.paterno"
         		       ng-focus="onFocusPaterno()" 
         		       ng-keyup="onKeyUpPaterno()"
+        		       ng-disabled="inputsAltaUsuario"
         		       class="form-control" 
         		       style="margin-bottom:15px;">
         		       <span ng-class="iconsUserPaternoClasses"></span>
@@ -51,6 +54,7 @@
         		       ng-model="usuario.materno" 
         		       ng-focus="onFocusMaterno()"
         		       ng-keyup="onKeyUpMaterno()"
+        		       ng-disabled="inputsAltaUsuario"
         		       class="form-control" 
         		       style="margin-bottom:15px;">
         		       <span ng-class="iconsUserMaternoClasses"></span>
@@ -63,6 +67,7 @@
         		       ng-model="usuario.password"
         		       ng-focus="onFocusPassword()"
         		       ng-keyup="onKeyUpPassword()"
+        		       ng-disabled="inputsAltaUsuario"
         		       class="form-control" 
         		       style="margin-bottom:15px;">
         		       <span ng-class="iconsUserPasswordClasses"></span>
@@ -75,6 +80,7 @@
         		       ng-model="confirmPwd"
         		       ng-focus="onFocusConfirmar()"
         		       ng-keyup="onKeyUpConfirmaPassword()"
+        		       ng-disabled="inputsAltaUsuario"
         		       class="form-control" 
         		       style="margin-bottom:15px;">
         		       <span ng-class="iconsUserConfirmaPasswordClasses"></span>
@@ -104,8 +110,25 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-success" ng-click="onAltaUsuarioAceptar(usuario)">Aceptar</button>
-        <button type="button" class="btn btn-danger" ng-click="onAltaUsuarioCancelar()">Cancelar</button>
+        <button type="button" 
+                class="btn btn-warning" 
+                ng-show="cerrarAltaUsuario" 
+                ng-click="onAltaUsuarioCerrar()">
+                Cerrar
+        </button>
+        <button type="button" 
+                class="btn btn-success"
+                ng-show="aceptarCancelarAltaUsuario"
+                ng-disabled="validacionesFormulario" 
+                ng-click="onAltaUsuarioAceptar(usuario)">
+                Aceptar
+        </button>
+        <button type="button" 
+                class="btn btn-danger"
+                ng-show="aceptarCancelarAltaUsuario"
+                ng-click="onAltaUsuarioCancelar()">
+                Cancelar
+        </button>
       </div>
     </div>
   </div>
