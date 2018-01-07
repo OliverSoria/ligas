@@ -222,7 +222,7 @@ controladorApp.controller('alta_usuario', function($scope, $http) {
 			$scope.inputsAltaUsuario = true;
 			$('#tabla-usuarios').bootstrapTable('refresh');
 			$scope.tituloAltaUsuario = 'Usuario agregado con \u00e9xito';
-			$scope.textAltaUsuario = 'El usuario fue dado de alta';
+			$scope.textAltaUsuario = '\u00a1El usuario fue dado de alta!';
 			$scope.cerrarAltaUsuario = true;
 			$scope.aceptarCancelarAltaUsuario = false;
 			$('.selectpicker').prop('disabled', true);
@@ -320,27 +320,46 @@ controladorApp.controller('alta_usuario', function($scope, $http) {
 			$scope.colorUserUsuarioClasses = 'col-xs-12 col-sm-6 col-md-6 has-error';
 			usuario = true;
 			validaFormulario();
-		// Valida si esta disponible
-		} else {
-			for (var i = 0; i < usuarios.length; i++) {
-				// Si no esta disponible
-				if (usuarios[i].alias_usuario === $scope.usuario.alias) {
-					$scope.textAltaUsuario = "Usuario no disponible";
-					$scope.alertUserClasses = 'alert alert-danger alert-info-modal text-center';
-					$scope.iconsUserUsuarioClasses = 'glyphicon glyphicon-remove form-control-feedback glyphicon-input';
-					$scope.colorUserUsuarioClasses = 'col-xs-12 col-sm-6 col-md-6 has-error';
-					usuario = true;
-					validaFormulario();
-					break;
-				// Si esta disponible
-				} else {
-					$scope.textAltaUsuario = "Usuario disponible";
-					$scope.alertUserClasses = 'alert alert-success alert-info-modal text-center';
-					$scope.iconsUserUsuarioClasses = 'glyphicon glyphicon-ok form-control-feedback glyphicon-input';
-					$scope.colorUserUsuarioClasses = 'col-xs-12 col-sm-6 col-md-6 has-success';
-					usuario = false;
-					validaFormulario();
-				}
+		// Valida que no sea mayor a 16 caracteres
+		} else if ($scope.usuario.alias.length > 16) {
+			$scope.textAltaUsuario = "Su usuario debe tener m\u00e1ximo 16 caracteres";
+			$scope.alertUserClasses = 'alert alert-danger alert-info-modal text-center';
+			$scope.iconsUserUsuarioClasses = 'glyphicon glyphicon-remove form-control-feedback glyphicon-input';
+			$scope.colorUserUsuarioClasses = 'col-xs-12 col-sm-6 col-md-6 has-error';
+			usuario = true;
+			validaFormulario();
+		// Valida si esta disponible	
+		}else {
+			// Si es que existen mas usuarios
+			if (usuarios.length > 0) {
+				for (var i = 0; i < usuarios.length; i++) {
+					// Si el usuario no esta disponible
+					if (usuarios[i].alias_usuario === $scope.usuario.alias) {
+						$scope.textAltaUsuario = "Usuario no disponible";
+						$scope.alertUserClasses = 'alert alert-danger alert-info-modal text-center';
+						$scope.iconsUserUsuarioClasses = 'glyphicon glyphicon-remove form-control-feedback glyphicon-input';
+						$scope.colorUserUsuarioClasses = 'col-xs-12 col-sm-6 col-md-6 has-error';
+						usuario = true;
+						validaFormulario();
+						break;
+					// Si el usuario esta disponible
+					} else {
+						$scope.textAltaUsuario = "Usuario disponible";
+						$scope.alertUserClasses = 'alert alert-success alert-info-modal text-center';
+						$scope.iconsUserUsuarioClasses = 'glyphicon glyphicon-ok form-control-feedback glyphicon-input';
+						$scope.colorUserUsuarioClasses = 'col-xs-12 col-sm-6 col-md-6 has-success';
+						usuario = false;
+						validaFormulario();
+					}
+				} 
+			// Si no existen mas usuarios
+			} else {
+				$scope.textAltaUsuario = "Usuario disponible";
+				$scope.alertUserClasses = 'alert alert-success alert-info-modal text-center';
+				$scope.iconsUserUsuarioClasses = 'glyphicon glyphicon-ok form-control-feedback glyphicon-input';
+				$scope.colorUserUsuarioClasses = 'col-xs-12 col-sm-6 col-md-6 has-success';
+				usuario = false;
+				validaFormulario();
 			}
 		}
 	}
@@ -380,7 +399,7 @@ controladorApp.controller('alta_usuario', function($scope, $http) {
 		    actualizaEstilosInputs(texto, 'error');
 	    // Valida que al menos tenga 2 caracteres
 	    } else if(variableBean.length < 2) {
-	    	$scope.textAltaUsuario = "Su " + texto.toLowerCase() + " debe tener al menos 2 caracteres";
+	    	$scope.textAltaUsuario = texto + " no v\u00e1lido";
 	        $scope.alertUserClasses = 'alert alert-danger alert-info-modal text-center';
 	        actualizaEstilosInputs(texto, 'error');
 	    // Si pasa todas las validaciones
@@ -409,7 +428,7 @@ controladorApp.controller('alta_usuario', function($scope, $http) {
 			$scope.colorUserPasswordClasses = 'col-xs-12 col-sm-6 col-md-6 has-error';
 			password = true;
 			validaFormulario();
-		// Valida maximo 16 caracteres
+		// Valida que tenga al menos una letra
 		} else if ($scope.usuario.password.search(/[a-z]/i) < 0) {
 			$scope.textAltaUsuario = "Su contrase\u00F1a debe tener al menos una letra";
 			$scope.alertUserClasses = 'alert alert-danger alert-info-modal text-center';
