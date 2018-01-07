@@ -4,12 +4,12 @@
     <!-- Modal content-->
     <div class="modal-content" ng-controller="alta_usuario">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <button type="button" class="close" ng-click="onAltaUsuarioCancelar()">&times;</button>
         <h4 class="modal-title">{{tituloAltaUsuario}}</h4>
       </div>
       <div class="modal-body">
         <div class="row">
-        	<span class="text-right col-xs-12 col-sm-6 col-md-6">Usuario:</span>
+        	<span class="text-right col-xs-12 col-sm-6 col-md-6 row-vertcal">Usuario:</span>
         	<div ng-class="colorUserUsuarioClasses">
         		<input type="text" 
         		       ng-model="usuario.alias" 
@@ -22,7 +22,7 @@
         	</div>
         </div>
         <div class="row">
-        	<span class="text-right col-xs-12 col-sm-6 col-md-6">Nombre(s):</span>
+        	<span class="text-right col-xs-12 col-sm-6 col-md-6 row-vertcal">Nombre(s):</span>
         	<div ng-class="colorUserNombreClasses">
         		<input type="text" 
         		       ng-model="usuario.nombre"
@@ -35,7 +35,7 @@
         	</div>
         </div>
         <div class="row">
-        	<span class="text-right col-xs-12 col-sm-6 col-md-6">Apellido Paterno:</span>
+        	<span class="text-right col-xs-12 col-sm-6 col-md-6 row-vertcal">Apellido Paterno:</span>
         	<div ng-class="colorUserPaternoClasses">
         		<input type="text" 
         		       ng-model="usuario.paterno"
@@ -48,7 +48,7 @@
         	</div>
         </div>
       	<div class="row">
-        	<span class="text-right col-xs-12 col-sm-6 col-md-6">Apellido Materno:</span>
+        	<span class="text-right col-xs-12 col-sm-6 col-md-6 row-vertcal">Apellido Materno:</span>
         	<div ng-class="colorUserMaternoClasses">
         		<input type="text" 
         		       ng-model="usuario.materno" 
@@ -61,7 +61,7 @@
         	</div>
         </div>
         <div class="row">
-        	<span class="text-right col-xs-12 col-sm-6 col-md-6">Contraseña:</span>
+        	<span class="text-right col-xs-12 col-sm-6 col-md-6 row-vertcal">Contraseña:</span>
         	<div ng-class="colorUserPasswordClasses">
         		<input type="password" 
         		       ng-model="usuario.password"
@@ -74,7 +74,7 @@
         	</div>
         </div>
         <div class="row">
-        	<span class="text-right col-xs-12 col-sm-6 col-md-6">Confirmar contraseña:</span>
+        	<span class="text-right col-xs-12 col-sm-6 col-md-6 row-vertcal">Confirmar contraseña:</span>
         	<div ng-class="colorUserConfirmaPasswordClasses">
         		<input type="password" 
         		       ng-model="confirmPwd"
@@ -87,7 +87,7 @@
         	</div>
         </div>
         <div class="row">
-        	<span class="text-right col-xs-12 col-sm-6 col-md-6">Tipo de Usuario:</span>
+        	<span class="text-right col-xs-12 col-sm-6 col-md-6 row-vertcal">Tipo de Usuario:</span>
         	<div class="col-xs-12 col-sm-6 col-md-6">
         		<!-- <input type="text" ng-model="usuario.tipo" class="form-control"> -->
         		<div class="form-group" ng-click="onFocusTipo()">

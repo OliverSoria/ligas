@@ -164,19 +164,21 @@ controladorApp.controller('alta_usuario', function($scope, $http) {
 	var password = true;
 	var confirma = true;
 	
-	// Estilos de los campos
+	// Estilos de la alerta
 	$scope.alertUserClasses = 'alert alert-info alert-info-modal text-center';
-	$scope.colorUserUsuarioClasses = 'col-xs-12 col-sm-6 col-md-6';
+	
+	// Estilos de los campos
+	$scope.colorUserUsuarioClasses = 'col-xs-12 col-sm-6 col-md-6 has-warning';
 	$scope.iconsUserUsuarioClasses = 'glyphicon glyphicon-warning-sign form-control-feedback glyphicon-input';
-	$scope.colorUserNombreClasses = 'col-xs-12 col-sm-6 col-md-6';
+	$scope.colorUserNombreClasses = 'col-xs-12 col-sm-6 col-md-6 has-warning';
 	$scope.iconsUserNombreClasses = 'glyphicon glyphicon-warning-sign form-control-feedback glyphicon-input';
-	$scope.colorUserPaternoClasses = 'col-xs-12 col-sm-6 col-md-6';
+	$scope.colorUserPaternoClasses = 'col-xs-12 col-sm-6 col-md-6 has-warning';
 	$scope.iconsUserPaternoClasses = 'glyphicon glyphicon-warning-sign form-control-feedback glyphicon-input';
-	$scope.colorUserMaternoClasses = 'col-xs-12 col-sm-6 col-md-6';
+	$scope.colorUserMaternoClasses = 'col-xs-12 col-sm-6 col-md-6 has-warning';
 	$scope.iconsUserMaternoClasses = 'glyphicon glyphicon-warning-sign form-control-feedback glyphicon-input';
-	$scope.colorUserPasswordClasses = 'col-xs-12 col-sm-6 col-md-6';
+	$scope.colorUserPasswordClasses = 'col-xs-12 col-sm-6 col-md-6 has-warning';
 	$scope.iconsUserPasswordClasses = 'glyphicon glyphicon-warning-sign form-control-feedback glyphicon-input';
-	$scope.colorUserConfirmaPasswordClasses = 'col-xs-12 col-sm-6 col-md-6';
+	$scope.colorUserConfirmaPasswordClasses = 'col-xs-12 col-sm-6 col-md-6 has-warning ';
 	$scope.iconsUserConfirmaPasswordClasses = 'glyphicon glyphicon-warning-sign form-control-feedback glyphicon-input';
 	
 	// Titulo del panel de alta
@@ -197,7 +199,6 @@ controladorApp.controller('alta_usuario', function($scope, $http) {
 		var tipoUsario = $('.selectpicker').selectpicker('val');
 		
 		user = {
-		
 			id_usuario         : 1               ,
 			alias_usuario      : usuario.alias   ,
 			nombre_usuario     : usuario.nombre  ,
@@ -303,7 +304,7 @@ controladorApp.controller('alta_usuario', function($scope, $http) {
 			$scope.textAltaUsuario = "Introduzca el usuario que desea utilizar";
 			$scope.alertUserClasses = 'alert alert-info alert-info-modal text-center';
 			$scope.iconsUserUsuarioClasses = 'glyphicon glyphicon-warning-sign form-control-feedback glyphicon-input';
-			$scope.colorUserUsuarioClasses = 'col-xs-12 col-sm-6 col-md-6';
+			$scope.colorUserUsuarioClasses = 'col-xs-12 col-sm-6 col-md-6 has-warning';
 		// Valida que los carateres sean validos
 		} else if(!validaNickName($scope.usuario.alias)) {
 			$scope.textAltaUsuario = "No es posible utilizar caracteres especiales";
@@ -334,7 +335,7 @@ controladorApp.controller('alta_usuario', function($scope, $http) {
 			if (usuarios.length > 0) {
 				for (var i = 0; i < usuarios.length; i++) {
 					// Si el usuario no esta disponible
-					if (usuarios[i].alias_usuario === $scope.usuario.alias) {
+					if (usuarios[i].alias_usuario.toLowerCase().trim() === $scope.usuario.alias.toLowerCase().trim()) {
 						$scope.textAltaUsuario = "Usuario no disponible";
 						$scope.alertUserClasses = 'alert alert-danger alert-info-modal text-center';
 						$scope.iconsUserUsuarioClasses = 'glyphicon glyphicon-remove form-control-feedback glyphicon-input';
@@ -419,7 +420,7 @@ controladorApp.controller('alta_usuario', function($scope, $http) {
 			$scope.textAltaUsuario = "Introduzca la contrase\u00F1a que desea utilizar";
 			$scope.alertUserClasses = 'alert alert-info alert-info-modal text-center';
 			$scope.iconsUserPasswordClasses = 'glyphicon glyphicon-warning-sign form-control-feedback glyphicon-input';
-			$scope.colorUserPasswordClasses = 'col-xs-12 col-sm-6 col-md-6';
+			$scope.colorUserPasswordClasses = 'col-xs-12 col-sm-6 col-md-6 has-warning';
 		// Valida minimo 6 caracteres
 		} else if($scope.usuario.password.length < 6) {
 			$scope.textAltaUsuario = "Su contrase\u00F1a debe tener al menos 6 caracteres";
@@ -484,7 +485,7 @@ controladorApp.controller('alta_usuario', function($scope, $http) {
 			$scope.textAltaUsuario = "Confirme la contrase\u00F1a que desea utilizar";
 			$scope.alertUserClasses = 'alert alert-info alert-info-modal text-center';
 			$scope.iconsUserConfirmaPasswordClasses = 'glyphicon glyphicon-warning-sign form-control-feedback glyphicon-input';
-			$scope.colorUserConfirmaPasswordClasses = 'col-xs-12 col-sm-6 col-md-6';
+			$scope.colorUserConfirmaPasswordClasses = 'col-xs-12 col-sm-6 col-md-6 has-warning';
 		// Valida minimo 6 caracteres
 		} else if ($scope.usuario == undefined || $scope.usuario.password !== $scope.confirmPwd) {
 			$scope.textAltaUsuario = "Las contrase\u00F1as no coinciden";
@@ -543,17 +544,17 @@ controladorApp.controller('alta_usuario', function($scope, $http) {
 		} else {
 			if (tipo === 'Nombre') {
 	    		$scope.iconsUserNombreClasses = 'glyphicon glyphicon-warning-sign form-control-feedback glyphicon-input';
-	    		$scope.colorUserNombreClasses = 'col-xs-12 col-sm-6 col-md-6';
+	    		$scope.colorUserNombreClasses = 'col-xs-12 col-sm-6 col-md-6 has-warning';
 	    		nombre   = true;
 	    		validaFormulario();
 			} else if (tipo === 'Apellido paterno') {
 	    		$scope.iconsUserPaternoClasses = 'glyphicon glyphicon-warning-sign form-control-feedback glyphicon-input';
-	    		$scope.colorUserPaternoClasses = 'col-xs-12 col-sm-6 col-md-6'; 
+	    		$scope.colorUserPaternoClasses = 'col-xs-12 col-sm-6 col-md-6 has-warning'; 
 	    		paterno = true;
 	    		validaFormulario();
 			} else if (tipo === 'Apellido materno') {
 	    		$scope.iconsUserMaternoClasses = 'glyphicon glyphicon-warning-sign form-control-feedback glyphicon-input';
-	    		$scope.colorUserMaternoClasses = 'col-xs-12 col-sm-6 col-md-6';
+	    		$scope.colorUserMaternoClasses = 'col-xs-12 col-sm-6 col-md-6 has-warning';
 	    		materno = true;
 	    		validaFormulario();
 	    	}
@@ -583,17 +584,17 @@ controladorApp.controller('alta_usuario', function($scope, $http) {
 		$('.selectpicker').prop('disabled', false);
 		$('.selectpicker').selectpicker('refresh');
 		$scope.alertUserClasses = 'alert alert-info alert-info-modal text-center';
-		$scope.colorUserUsuarioClasses = 'col-xs-12 col-sm-6 col-md-6';
+		$scope.colorUserUsuarioClasses = 'col-xs-12 col-sm-6 col-md-6 has-warning';
 		$scope.iconsUserUsuarioClasses = 'glyphicon glyphicon-warning-sign form-control-feedback glyphicon-input';
-		$scope.colorUserNombreClasses = 'col-xs-12 col-sm-6 col-md-6';
+		$scope.colorUserNombreClasses = 'col-xs-12 col-sm-6 col-md-6 has-warning';
 		$scope.iconsUserNombreClasses = 'glyphicon glyphicon-warning-sign form-control-feedback glyphicon-input';
-		$scope.colorUserPaternoClasses = 'col-xs-12 col-sm-6 col-md-6';
+		$scope.colorUserPaternoClasses = 'col-xs-12 col-sm-6 col-md-6 has-warning';
 		$scope.iconsUserPaternoClasses = 'glyphicon glyphicon-warning-sign form-control-feedback glyphicon-input';
-		$scope.colorUserMaternoClasses = 'col-xs-12 col-sm-6 col-md-6';
+		$scope.colorUserMaternoClasses = 'col-xs-12 col-sm-6 col-md-6 has-warning';
 		$scope.iconsUserMaternoClasses = 'glyphicon glyphicon-warning-sign form-control-feedback glyphicon-input';
-		$scope.colorUserPasswordClasses = 'col-xs-12 col-sm-6 col-md-6';
+		$scope.colorUserPasswordClasses = 'col-xs-12 col-sm-6 col-md-6 has-warning';
 		$scope.iconsUserPasswordClasses = 'glyphicon glyphicon-warning-sign form-control-feedback glyphicon-input';
-		$scope.colorUserConfirmaPasswordClasses = 'col-xs-12 col-sm-6 col-md-6';
+		$scope.colorUserConfirmaPasswordClasses = 'col-xs-12 col-sm-6 col-md-6 has-warning';
 		$scope.iconsUserConfirmaPasswordClasses = 'glyphicon glyphicon-warning-sign form-control-feedback glyphicon-input';
 		$scope.textAltaUsuario = 'Favor de capturar la informaci\u00F3n';
 		$scope.cerrarAltaUsuario = false;
