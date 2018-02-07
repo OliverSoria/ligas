@@ -7,7 +7,7 @@
       <property name = "hibernate.connection.username">root</property>
       <property name = "hibernate.connection.password">root</property>
 	  <mapping class = "com.project.dto.PruebaDto" />
-	  <mapping class = "com.project.dto.UsuarioDto" /> 
+	  <mapping class = "com.project.dto.UsuarioDto" />  
    </session-factory>
    
 </hibernate-configuration>
